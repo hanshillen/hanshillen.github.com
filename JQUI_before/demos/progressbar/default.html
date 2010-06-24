@@ -12,8 +12,12 @@
 	<script type="text/javascript">
 	$(function() {
 		$("#progressbar").progressbar({
-			value: 37
+			value: 0,
+			labelledBy: "ProgressMsg"
 		});
+		setTimeout(function() {
+			setInterval(function() {$("#progressbar").progressbar('value', $("#progressbar").progressbar('value') + 1)}, 250);
+		}, 2000);
 	});
 	</script>
 </head>
@@ -22,6 +26,7 @@
 <div class="demo">
 
 	<div id="progressbar"></div>
+	<p id="ProgressMsg">Loading Files...</p>
 
 </div><!-- End demo -->
 
